@@ -46,17 +46,7 @@ This project is a simple REST API built using Node.js, Express, and MongoDB. It'
 
 ## Usage
 
-Examples of using the API with `curl`:
-
-- **Create an Item:**
-  ```
-  curl -X POST -H "Content-Type: application/json" -d '{"name":"Item Name", "description":"Item Description"}' http://localhost:3000/items
-  ```
-
-- **Get All Items:**
-  ```
-  curl http://localhost:3000/items
-  ```
+After starting server, REST requests can be sent from an existing client or through an API testing platform like Postman that will display response data to be compared with expected behavior.
 
 ## License
 
