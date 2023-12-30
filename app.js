@@ -1,10 +1,26 @@
-const express = require('express');
-const mongoose = require('mongoose');
+import express, { json } from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+//load env variables
+dotenv.config()
 
 const app = express();
-app.use(express.json());
+app.use(json());
+const port = process.env.PORT;
 
-const {port} = require('./config')
+//connect to mongoDB
+const mongoString = process.env.DATABASE_URL;
+mongoose.connect(mongoString);
+const database = mongoose.connection;
+//test db connection
+database.on('error', (error) => {
+   console.log(error)
+})
+
+database.once('connected', () => {
+   console.log('Database Connected');
+})
 
 app.get('/status', (request, response) => {
     const status = {
