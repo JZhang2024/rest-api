@@ -1,6 +1,7 @@
 import express, { json } from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRoutes from './routes/users.js'; // import user routes
 
 //load env variables
 dotenv.config()
@@ -22,23 +23,8 @@ database.once('connected', () => {
    console.log('Database Connected');
 })
 
-app.get('/status', (request, response) => {
-    const status = {
-       'Status': 'Running'
-    };
-    
-    response.send(status);
- });
-
- app.get('/test', (request, response) => {
-   const payload = {
-      'Status': 'Running',
-      "testValue" : 3
-   };
-   
-   response.send(payload);
-});
+app.use('/users', userRoutes); // use user routes
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-  });
+  console.log(`Server is running on port ${port}`);
+});
