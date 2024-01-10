@@ -4,6 +4,9 @@
 
 This project is a simple REST API built using Node.js, Express, and MongoDB. It's designed as a learning tool for understanding the basics of backend development and as a reusable template for future projects. The API supports CRUD (Create, Read, Update, Delete) operations, providing a solid foundation for building and expanding upon.
 
+### Future Work
+Possible additions I am planning would be either a GUI for webapp DB interactions or CLI command usage for testing without going through Postman/third-party platforms.
+
 ## Features
 
 - **CRUD Operations:** Create, Read, Update, and Delete functionality for managing data.
